@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ebrar Acar — Autonomous Systems</title>
+<meta name="description" content="Software engineering student. GitHub, LinkedIn, CV and projects.">
+<meta property="og:title" content="Ebrar Acar">
+<meta property="og:description" content="Software engineering student. Projects and links.">
+<style>
+:root{
+  --bg:#e6e6e2; --paper:#f4f4f0; --ink:#000; --mid:#5b5b58; --soft:#bdbdb8;
+}
+*{box-sizing:border-box;margin:0}
+body{
+  background:var(--bg); color:var(--ink);
+  font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  min-height:100vh;
+}
+main{max-width:640px;margin:0 auto;padding:20px 16px 40px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+.topbar{display:flex;justify-content:space-between;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+
+.hero{text-align:center}
+.hero svg{display:block;width:100%;height:auto}
+h1{
+  position:relative;z-index:2;margin-top:-52px;
+  font:900 clamp(3.2rem,15vw,5.4rem)/.88 Impact,"Arial Black","Haettenschweiler",sans-serif;
+  text-transform:uppercase;letter-spacing:.01em;
+  color:var(--paper);
+  -webkit-text-stroke:3px var(--ink);paint-order:stroke fill;
+  text-shadow:1px 1px 0 #000,2px 2px 0 #000,3px 3px 0 #000,4px 4px 0 #000,5px 5px 0 #000,6px 6px 0 #000,7px 7px 0 #000;
+}
+.sub{max-width:38ch;margin:22px auto 0;font-size:.82rem;letter-spacing:.04em;color:var(--mid)}
+
+.links{display:grid;gap:14px;margin:30px 0 8px}
+.btn{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 18px;border:2.5px solid var(--ink);border-radius:12px;
+  background:var(--paper);color:var(--ink);text-decoration:none;
+  box-shadow:5px 5px 0 var(--ink);
+  transition:transform .12s,box-shadow .12s;
+}
+.btn:hover,.btn:focus-visible{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);outline:none}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn b{font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.btn span{font-size:.82rem;color:var(--mid);text-align:right}
+.btn.primary{background:var(--ink);color:var(--paper);box-shadow:5px 5px 0 #8a8a86}
+.btn.primary:hover,.btn.primary:focus-visible{box-shadow:7px 7px 0 #8a8a86}
+.btn.primary:active{box-shadow:2px 2px 0 #8a8a86}
+.btn.primary span{color:var(--soft)}
+
+/* dark panel. The CSS dots are a no-JS fallback; the script replaces them with a generated star field. */
+.dark{
+  margin-top:52px;padding:34px 20px 0;overflow:hidden;
+  background-color:#000;color:var(--paper);
+  border-radius:70px 150px 50px 110px / 80px 100px 60px 110px;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 110px 90px,#fff,transparent),
+    radial-gradient(1px 1px at 190px 40px,#fffc,transparent),
+    radial-gradient(1px 1px at 260px 130px,#fff,transparent);
+  background-size:300px 160px;
+}
+h2{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:16px}
+.card{
+  background:var(--paper);color:var(--ink);border-radius:12px;
+  padding:18px;margin-bottom:18px;box-shadow:5px 5px 0 var(--mid);
+}
+.badge{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:1px 9px;border-radius:99px;margin-bottom:8px}
+.card h3{font-size:1.05rem;line-height:1.3;margin-bottom:6px}
+.meta{font-size:.72rem;letter-spacing:.04em;color:var(--mid);margin:-2px 0 8px}
+.card p{color:#333;font-size:.92rem;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chip{font-size:.72rem;padding:1px 9px;border-radius:99px;border:1.5px solid var(--ink)}
+.card a{color:var(--ink);font-weight:800;font-size:.9rem;text-decoration:underline;text-underline-offset:3px}
+.scene{display:block;width:calc(100% + 40px);margin:18px -20px 0;height:auto}
+
+footer{margin-top:26px;text-align:center;color:var(--mid);font-size:.75rem;letter-spacing:.08em}
+
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+<main>
+
+  <div class="topbar mono"><span></span><span>AUTONOMOUS SYSTEMS</span></div>
+
+  <header class="hero">
+    <svg viewBox="0 0 600 300" aria-hidden="true">
+      <defs>
+        <path id="blobShape" d="M60,170 C40,80 140,20 260,30 C380,10 520,40 560,120 C600,200 520,280 400,285 C300,300 180,290 110,260 C70,240 65,200 60,170 Z"/>
+        <clipPath id="blobClip"><use href="#blobShape"/></clipPath>
+        <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#a5a5a0"/><stop offset="1" stop-color="#4a4a47"/>
+        </linearGradient>
+        <linearGradient id="foil" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f4f4f0"/><stop offset=".5" stop-color="#bdbdb8"/><stop offset="1" stop-color="#6d6d69"/>
+        </linearGradient>
+        <clipPath id="m1"><circle cx="170" cy="200" r="22"/></clipPath>
+        <!-- light from upper left; gradient edge = terminator -->
+        <radialGradient id="sphere" cx=".35" cy=".3" r=".8">
+          <stop offset="0" stop-color="#fbfbf8"/>
+          <stop offset=".4" stop-color="#d2d2cd"/>
+          <stop offset=".75" stop-color="#7b7b77"/>
+          <stop offset="1" stop-color="#1f1f1d"/>
+        </radialGradient>
+        <radialGradient id="term" cx=".35" cy=".3" r=".85">
+          <stop offset=".5" stop-color="#000" stop-opacity="0"/>
+          <stop offset="1" stop-color="#000" stop-opacity=".55"/>
+        </radialGradient>
+      </defs>
+
+      <use href="#blobShape" fill="#000"/>
+      <g id="heroStars" clip-path="url(#blobClip)"></g>
+
+      <!-- small moon -->
+      <circle cx="170" cy="200" r="22" fill="url(#sphere)"/>
+      <g clip-path="url(#m1)">
+        <ellipse cx="163" cy="196" rx="9" ry="7" fill="#000" opacity=".16"/>
+        <ellipse cx="178" cy="207" rx="7" ry="5" fill="#000" opacity=".14"/>
+        <circle cx="182" cy="193" r="3.4" fill="#f0f0ec" opacity=".5"/><circle cx="181.6" cy="192.6" r="3.1" fill="#2c2c2a" opacity=".45"/>
+        <circle cx="160" cy="208" r="2.6" fill="#f0f0ec" opacity=".5"/><circle cx="159.7" cy="207.7" r="2.3" fill="#2c2c2a" opacity=".45"/>
+        <circle cx="172" cy="188" r="2" fill="#f0f0ec" opacity=".5"/><circle cx="171.8" cy="187.8" r="1.8" fill="#2c2c2a" opacity=".45"/>
+      </g>
+      <circle cx="170" cy="200" r="22" fill="url(#term)"/>
+
+      <!-- satellite: bus, two solar wings, dish antenna -->
+      <g transform="translate(390,150) rotate(-18) scale(1.1)">
+        <g stroke="#bdbdb8" stroke-width="3"><line x1="-38" y1="0" x2="-22" y2="0"/><line x1="22" y1="0" x2="38" y2="0"/></g>
+        <rect x="-100" y="-18" width="62" height="36" fill="url(#panel)" stroke="#f4f4f0" stroke-width="1.5"/>
+        <rect x="38"   y="-18" width="62" height="36" fill="url(#panel)" stroke="#f4f4f0" stroke-width="1.5"/>
+        <g stroke="#d9d9d5" stroke-width="1" opacity=".75" fill="none">
+          <path d="M-84.5,-18V18M-69,-18V18M-53.5,-18V18M-100,-6H-38M-100,6H-38"/>
+          <path d="M53.5,-18V18M69,-18V18M84.5,-18V18M38,-6H100M38,6H100"/>
+        </g>
+        <path d="M-6,20 L6,20 L9,28 L-9,28 Z" fill="#8a8a85"/>
+        <rect x="-22" y="-20" width="44" height="40" rx="4" fill="url(#foil)" stroke="#8f8f8a" stroke-width="1"/>
+        <rect x="-22" y="-4" width="44" height="8" fill="#3a3a38" opacity=".6"/>
+        <circle cx="0" cy="11" r="4" fill="#1f1f1d" stroke="#cfcfca" stroke-width="1"/>
+        <line x1="0" y1="-20" x2="0" y2="-34" stroke="#cfcfca" stroke-width="2.5"/>
+        <path d="M-15,-38 Q0,-24 15,-38 Q0,-34 -15,-38 Z" fill="#e2e2de" stroke="#8f8f8a" stroke-width="1"/>
+        <line x1="0" y1="-33" x2="0" y2="-46" stroke="#cfcfca" stroke-width="1.5"/>
+        <circle cx="0" cy="-47" r="2" fill="#f4f4f0"/>
+      </g>
+    </svg>
+
+    <h1>EBRAR<br>ACAR</h1>
+    <p class="sub mono">Multi-Agent Systems, Autonomous Navigation, Space Robotics, Edge AI</p>
+  </header>
+
+  <nav class="links" aria-label="Links">
+    <a class="btn primary" href="https://github.com/aithusa13"><b>GitHub</b><span>github.com/aithusa13 →</span></a>
+    <a class="btn" href="https://www.linkedin.com/in/ebrar13"><b>LinkedIn</b><span>in/ebrar13 →</span></a>
+    <a class="btn" href="Resume.pdf"><b>Résumé</b><span>Download PDF ↓</span></a>
+    <a class="btn" href="mailto:ebraracar@gmail.com"><b>Email</b><span>ebraracar@gmail.com</span></a>
+  </nav>
+
+  <section class="dark" aria-labelledby="proj">
+    <h2 id="proj" class="mono">Projects</h2>
+
+    <article class="card">
+      <span class="badge mono">Project 01</span>
+      <h3>Comparative Analysis of Single-Vehicle VIO vs. Swarm-Based Geometric Positioning for Mars Aerial Exploration Missions</h3>
+      <div class="meta mono">Ongoing</div>
+      <p>Inspired by Ingenuity's final landing, where VIO lost features over featureless terrain. Three drones derive a drift-free centroid from inter-vehicle UWB ranges and fuse it with VIO in an EKF. Validated in Gazebo + ArduPilot SITL.</p>
+      <div class="chips mono">
+        <span class="chip">ROS 2</span><span class="chip">ArduPilot SITL</span><span class="chip">Gazebo</span>
+        <span class="chip">UWB</span><span class="chip">EKF</span><span class="chip">VIO</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="badge mono">Project 02</span>
+      <h3>ROS-Based Swarm UAV: Mission Allocation &amp; Autonomous Coordination</h3>
+      <div class="meta mono">B.Sc. thesis</div>
+      <p>Mission software for five UAVs (one carrier, four mini UAVs) on ROS Noetic. Brute-force route planning on the carrier in C++; MobileNet-SSD + SORT human tracking with PID and LIDAR; area scan with safe payload drop; ArUco detection that hands coordinates to a kamikaze UAV with PID dive control (simulated). Swarm coordination layer is in development.</p>
+      <div class="chips mono">
+        <span class="chip">ROS Noetic</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">OpenCV</span>
+        <span class="chip">MobileNet-SSD</span><span class="chip">SORT</span><span class="chip">PID</span><span class="chip">LIDAR</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="badge mono">Project 03</span>
+      <h3>IoT-Based Fully Autonomous UAV</h3>
+      <div class="meta mono">2025 Teknofest International UAV Competition</div>
+      <p>ROS-based autonomous route computation and payload-drop software in Python. Built a cloud MQTT network linking Raspberry Pis on different networks with the ground station computer.</p>
+      <div class="chips mono">
+        <span class="chip">ROS</span><span class="chip">Python</span><span class="chip">MQTT</span><span class="chip">Raspberry Pi</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="badge mono">Project 04</span>
+      <h3>rotAY — Hybrid Route Optimization for Lunar Rovers</h3>
+      <div class="meta mono">TUA Astro Hackathon · Team lead</div>
+      <p>Two-layer planner on NASA LRO elevation data (MoonPlanBench): a genetic algorithm for global waypoints, A* for real-time local re-planning. Profile-based cost function (Fast, Balanced, Safe) trading off distance, clearance and terrain roughness.</p>
+      <div class="chips mono">
+        <span class="chip">Python</span><span class="chip">A*</span><span class="chip">Genetic Algorithm</span>
+        <span class="chip">NumPy</span><span class="chip">SciPy</span><span class="chip">scikit-image</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="badge mono">Project 05</span>
+      <h3>Multi-Agent RL Traffic Signal Control Benchmark</h3>
+      <div class="meta mono">Internship project</div>
+      <p>Benchmarked coordinated agents (CoLight, MPLight) against Fixed-time and MaxPressure on a 4×4 intersection network in LibSignal, across CityFlow and SUMO and two traffic distributions. Found and fixed coordination-breaking bugs in the MPLight/CoLight implementations; ported DHLight from CityFlow to SUMO and integrated it into LibSignal.</p>
+      <div class="chips mono">
+        <span class="chip">MARL</span><span class="chip">LibSignal</span><span class="chip">CityFlow</span><span class="chip">SUMO</span><span class="chip">Python</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="badge mono">Project 06</span>
+      <h3>Turtlebot3 Cleaner</h3>
+      <p>QR-code-driven cleaning robot on ROS Noetic: OpenCV-based QR detection node, SLAM mapping in RViz, autonomous navigation with move_base, modular custom launch files.</p>
+      <div class="chips mono">
+        <span class="chip">ROS Noetic</span><span class="chip">OpenCV</span><span class="chip">SLAM</span><span class="chip">move_base</span>
+      </div>
+    </article>
+
+    <!-- horizon: large cratered moon and a distant Mars-like planet -->
+    <svg class="scene" viewBox="0 0 600 220" aria-hidden="true">
+      <defs>
+        <clipPath id="mc"><circle cx="110" cy="178" r="62"/></clipPath>
+        <clipPath id="p2"><circle cx="480" cy="70" r="30"/></clipPath>
+      </defs>
+
+      <circle cx="110" cy="178" r="62" fill="url(#sphere)"/>
+      <g clip-path="url(#mc)">
+        <ellipse cx="88"  cy="150" rx="26" ry="18" fill="#000" opacity=".16"/>
+        <ellipse cx="140" cy="170" rx="20" ry="14" fill="#000" opacity=".14"/>
+        <ellipse cx="95"  cy="200" rx="22" ry="12" fill="#000" opacity=".12"/>
+        <circle cx="71"  cy="191" r="9.5"  fill="#f0f0ec" opacity=".5"/><circle cx="70"  cy="190" r="9"   fill="#2c2c2a" opacity=".42"/>
+        <circle cx="129" cy="149" r="7.5"  fill="#f0f0ec" opacity=".5"/><circle cx="128" cy="148" r="7"   fill="#2c2c2a" opacity=".42"/>
+        <circle cx="151" cy="197" r="11.5" fill="#f0f0ec" opacity=".5"/><circle cx="150" cy="196" r="11"  fill="#2c2c2a" opacity=".42"/>
+        <circle cx="113" cy="216" r="6.5"  fill="#f0f0ec" opacity=".5"/><circle cx="112" cy="215" r="6"   fill="#2c2c2a" opacity=".42"/>
+        <circle cx="61"  cy="161" r="5.5"  fill="#f0f0ec" opacity=".5"/><circle cx="60"  cy="160" r="5"   fill="#2c2c2a" opacity=".42"/>
+        <circle cx="101" cy="126" r="5.5"  fill="#f0f0ec" opacity=".5"/><circle cx="100" cy="125" r="5"   fill="#2c2c2a" opacity=".42"/>
+        <circle cx="146" cy="131" r="4.5"  fill="#f0f0ec" opacity=".5"/><circle cx="145" cy="130" r="4"   fill="#2c2c2a" opacity=".42"/>
+      </g>
+      <circle cx="110" cy="178" r="62" fill="url(#term)"/>
+
+      <circle cx="480" cy="70" r="30" fill="url(#sphere)"/>
+      <g clip-path="url(#p2)">
+        <ellipse cx="470" cy="62" rx="12" ry="7" fill="#55554f" opacity=".45"/>
+        <ellipse cx="492" cy="80" rx="10" ry="6" fill="#55554f" opacity=".4"/>
+        <ellipse cx="476" cy="90" rx="9"  ry="4" fill="#55554f" opacity=".35"/>
+        <ellipse cx="480" cy="42" rx="14" ry="4.5" fill="#fafaf6" opacity=".85"/>
+      </g>
+      <circle cx="480" cy="70" r="30" fill="url(#term)"/>
+    </svg>
+  </section>
+
+  <footer class="mono">© 2026 Ebrar Acar</footer>
+</main>
+
+<script>
+// Static star fields. Seeded RNG, so the sky is identical on every load. No animation.
+(function(){
+  function rng(s){return function(){s=(s+0x6D2B79F5)|0;var t=Math.imul(s^(s>>>15),1|s);t=(t+Math.imul(t^(t>>>7),61|t))^t;return((t^(t>>>14))>>>0)/4294967296}}
+  // Most stars faint and tiny, few bright (size ~ u^5); ~40% in a dense faint diagonal band (Milky Way);
+  // slight blue/warm tints.
+  function field(w,h,n,seed){
+    var r=rng(seed),out=[];
+    function g(){return Math.sqrt(-2*Math.log(1-r()))*Math.cos(6.2831853*r())}
+    for(var i=0;i<n;i++){
+      var x,y,s,a;
+      if(r()<0.4){var t=r();x=w*t;y=h*(0.85-0.7*t)+g()*h*0.07;s=0.3+0.4*r();a=0.25+0.35*r();}
+      else{x=r()*w;y=r()*h;var u=r();s=0.35+1.5*Math.pow(u,5);a=0.45+0.55*Math.min(1,s/1.4);}
+      if(x<0||x>w||y<0||y>h)continue;
+      var c=r();
+      out.push([x,y,s,a,c<0.15?'188,212,255':c<0.3?'255,217,176':'255,255,255']);
+    }
+    return out;
+  }
+
+  var dark=document.querySelector('.dark');
+  function paintDark(){
+    var w=dark.offsetWidth,h=dark.offsetHeight,d=Math.min(window.devicePixelRatio||1,2);
+    if(!w||!h)return;
+    var c=document.createElement('canvas');c.width=w*d;c.height=h*d;
+    var x=c.getContext('2d');x.scale(d,d);
+    field(w,h,Math.round(w*h/700),7).forEach(function(p){
+      x.fillStyle='rgba('+p[4]+','+p[3]+')';x.beginPath();x.arc(p[0],p[1],p[2],0,6.2832);x.fill();
+    });
+    dark.style.backgroundImage='url('+c.toDataURL()+')';
+    dark.style.backgroundSize=w+'px '+h+'px';
+  }
+  if(window.ResizeObserver){new ResizeObserver(paintDark).observe(dark);}
+  else{paintDark();window.addEventListener('resize',paintDark);}
+
+  var grp=document.getElementById('heroStars'),ns='http://www.w3.org/2000/svg';
+  field(600,300,260,3).forEach(function(p){
+    var e=document.createElementNS(ns,'circle');
+    e.setAttribute('cx',p[0].toFixed(1));e.setAttribute('cy',p[1].toFixed(1));
+    e.setAttribute('r',(p[2]*1.4).toFixed(2));
+    e.setAttribute('fill','rgb('+p[4]+')');e.setAttribute('opacity',p[3].toFixed(2));
+    grp.appendChild(e);
+  });
+})();
+</script>
+</body>
+</html>
